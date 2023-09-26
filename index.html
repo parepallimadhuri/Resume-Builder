@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="index.css">
+    <link href='https://fonts.googleapis.com/css?family=Rubik' rel='stylesheet'>
+    <link rel="stylesheet" href="./css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.js"></script>
+</head>
+
+<body>
+    <script src="script.js/script.js"></script>
+    <header>
+        <i class="fas fa-3x fa-file-contract"></i>
+        <h1 style="color: rgb(0, 68, 114);">Resume Builder</h1>
+        <!-- <nav>
+            <ul class="nav_links">
+                <li><a href="#">
+                        <h3>Services</h3>
+                    </a></li>
+                <li><a href="#">
+                        <h3>Project</h3>
+                    </a></li>
+                <li><a href="#">
+                        <h3>About</h3>
+                    </a></li>
+            </ul>
+        </nav> -->
+        <a href="#"><button id="download">Download as PDF</button></a>
+    </header>
+    <div class="container">
+
+
+        <div class="left-col">
+            <ol class="left-nav">
+                <li>
+                    <p id="profile">Profile</p>
+                </li>
+
+                <li>
+                    <p id="work">Work</p>
+                </li>
+
+                <li>
+                    <p id="skill">Skill</p>
+                </li>
+                <li>
+                    <p id="education">Education</p>
+                </li>
+                <li>
+                    <p id="project">Projects</p>
+                </li>
+                <li>
+                    <p id="award">Awards</p>
+                </li>
+            </ol>
+        </div>
+
+
+        <div class="center-col" style="position: relative;">
+
+            <div id="personal-info">
+                <h3>YOUR PERSONAL INFO</h3>
+                <div class="form">
+                    <input type="text" name="name" id="user-name" autocomplete="off" required />
+                    <label for="name" class="label-name">
+                        <span class="content-name">Full Name</span>
+                    </label>
+                </div><br>
+                <div class="form">
+                    <input type="text" name="email" id="user-email" autocomplete="off" required />
+                    <label for="name" class="label-name">
+                        <span class="content-name">Email Address</span>
+                    </label>
+                </div><br>
+                <div class="form">
+                    <input type="text" name="phone" autocomplete="off" id="user-phone" required />
+                    <label for="name" class="label-name">
+                        <span class="content-name">Phone Number</span>
+                    </label>
+                </div><br>
+                <div class="form">
+                    <input type="text" name="location" autocomplete="off" id="user-location" required />
+                    <label for="name" class="label-name">
+                        <span class="content-name">Location</span>
+                    </label>
+                </div><br>
+                <div class="form">
+                    <input type="text" name="link" autocomplete="off" id="user-link" required />
+                    <label for="name" class="label-name">
+                        <span class="content-name">Link</span>
+                    </label>
+                </div><br>
+            </div>
+
+
+            <div id="education-info">
+                <h3>YOUR EDUCATION BACKGROUND</h3>
+
+
+
+                <div id="first_edu_content">
+                    <div class="edu_container">
+
+                        <hr><br>
+
+                        <div class="form">
+                            <input type="text" name="name" autocomplete="off" required />
+                            <label for="name" class="label-name">
+                                <span class="content-name">School Name</span>
+                            </label>
+                        </div><br>
+                        <div class="form">
+                            <input type="text" name="name" autocomplete="off" required />
+                            <label for="name" class="label-name">
+                                <span class="content-name">Degree</span>
+                            </label>
+                        </div><br>
+                        <div class="form">
+                            <input type="text" name="name" autocomplete="off" required />
+                            <label for="name" class="label-name">
+                                <span class="content-name">Major</span>
+                            </label>
+                        </div><br>
+                        <div class="form">
+                            <input type="text" name="name" autocomplete="off" required />
+                            <label for="name" class="label-name">
+                                <span class="content-name">GPA</span>
+                            </label>
+                        </div><br>
+                        <div class="form">
+                            <input type="month" name="name" autocomplete="off" required />
+                            <label for="name" class="label-name">
+                                <span class="content-name">Start Date</span>
+                            </label>
+                        </div><br>
+                        <div class="form">
+                            <input type="month" name="name" autocomplete="off" required />
+                            <label for="name" class="label-name">
+                                <span class="content-name">End Date</span>
+                            </label>
+                        </div><br>
+                    </div>
+                </div>
+
+                <div id="more_school"></div>
+
+                <button id="container-button" onclick="add_school()">Add School</button>
+                <button id="container-button" onclick="rm_school()">Remove School</button>
+            </div>
+
+
+            <div id="work-info">
+                <h3>YOUR WORK EXPERIENCE</h3>
+
+
+                <div id="first_work_content">
+                    <div class="work_container">
+
+                        <hr><br>
+
+                        <div class="form">
+                            <input type="text" id="company-name" autocomplete="off" required />
+                            <label for="name" class="label-name">
+                                <span class="content-name">Company Name</span>
+                            </label>
+                        </div><br>
+                        <div class="form">
+                            <input type="text" id="job-title" autocomplete="off" required />
+                            <label for="name" class="label-name">
+                                <span class="content-name">Job Title</span>
+                            </label>
+                        </div><br>
+                        <div class="form">
+                            <input id="start-date" type="month" autocomplete="off" required />
+                            <label for="name" class="label-name">
+                                <span class="content-name">Start Date</span>
+                            </label>
+                        </div><br>
+                        <div class="form">
+                            <input type="month" id="end-date" autocomplete="off" required />
+                            <label for="name" class="label-name">
+                                <span class="content-name">End Date</span>
+                            </label>
+                        </div><br>
+                        <div class="form">
+                            <input type="text" id="job-description" autocomplete="off" required />
+                            <label for="name" class="label-name">
+                                <span class="content-name">Job Responsibilities</span>
+                            </label>
+                        </div><br>
+                    </div>
+                </div>
+                <div id="more_work"></div>
+                <button id="container-button" onclick="add_job()">Add Job</button>
+                <button id="container-button" onclick="rm_job()">Remove Job</button>
+            </div>
+
+
+            <div id="skill-info">
+                <h3>YOUR SKILLS</h3>
+                <div id="first_skill_content">
+                    <div class="skill_container">
+
+                        <hr><br>
+
+                        <div class="form">
+                            <input type="text" name="name" autocomplete="off" required />
+                            <label for="name" class="label-name">
+                                <span class="content-name" >Skill Name</span>
+                            </label>
+                        </div><br>
+                        <div >
+                            <div class="form2">
+
+                                <input type="text" name="input2" autocomplete="off" required />
+                                <label for="name" class="label-name">
+                                    <span class="content-name" >Skill Details</span>
+                                </label>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div id="more_skill"></div>
+
+                <button id="container-button" onclick="add_skill()">Add Skill</button>
+                <button id="container-button" onclick="rm_skill()">Remove Skill</button>
+            </div>
+
+
+
+            <div id="project-info">
+                <h3>YOUR PROJECTS</h3>
+                <div class="form">
+                    <input type="text" name="name" autocomplete="off" required />
+                    <label for="name" class="label-name">
+                        <span class="content-name">Section Heading</span>
+                    </label>
+                </div><br>
+
+                <div id="first_project_content">
+                    <div class="project_container">
+                        <br>
+                        <hr><br>
+
+                        <div class="form">
+                            <input type="text" name="name" autocomplete="off" required />
+                            <label for="name" class="label-name">
+                                <span class="content-name">Project Name</span>
+                            </label>
+                        </div><br>
+                        <div class="form">
+                            <input type="text" name="name" autocomplete="off" required />
+                            <label for="name" class="label-name">
+                                <span class="content-name">Project Description</span>
+                            </label>
+                        </div><br>
+                        <div class="form">
+                            <input type="text" name="name" autocomplete="off" required />
+                            <label for="name" class="label-name">
+                                <span class="content-name">Link to Project</span>
+                            </label>
+                        </div><br>
+
+                    </div>
+                </div>
+
+                <div id="more_project"></div>
+                <button id="container-button" onclick="add_project()">Add Project</button>
+                <button id="container-button" onclick="rm_project()">Remove Project</button>
+            </div>
+
+
+
+
+            <div id="award-info">
+                <h3>HONORS & AWARDS</h3>
+                <div class="form">
+                    <input type="text" name="name" autocomplete="off" required />
+                    <label for="name" class="label-name">
+                        <span class="content-name">Section Heading</span>
+                    </label>
+                </div><br>
+
+                <div id="first_award_content">
+                    <div class="award_container">
+                        <br>
+                        <hr><br>
+
+                        <div class="form">
+                            <input type="text" name="name" autocomplete="off" required />
+                            <label for="name" class="label-name">
+                                <span class="content-name">Award Name</span>
+                            </label>
+                        </div><br>
+                        <div class="form">
+                            <input type="text" name="name" autocomplete="off" required />
+                            <label for="name" class="label-name">
+                                <span class="content-name">Awarder</span>
+                            </label>
+                        </div><br>
+                        <div class="form">
+                            <input type="text" name="name" autocomplete="off" required />
+                            <label for="name" class="label-name">
+                                <span class="content-name">Summary</span>
+                            </label>
+                        </div><br>
+
+                    </div>
+                </div>
+                <div id="more_award"></div>
+                <button id="container-button" onclick="add_award()">Add Award</button>
+                <button id="container-button" onclick="rm_award()">Remove Award</button>
+            </div>
+
+
+        </div>
+
+
+        <div class="right-col">
+
+            <div   style="margin:0;padding: 0; box-sizing: border-box;
+            
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);">
+                <div id="resume" class="resume-content" style="margin:0;padding: 0;height: 1122px;" >
+
+                    <div  class="resume-left-area">
+                        <div style="padding-top: 40px;padding-bottom: 20px;text-align: center;">
+                            <img id="blah" src="https://raw.githubusercontent.com/GANESHKUMAR113/CodeAlpha-Resume-Builder/397e3ca30a70ea91863dbed3020a2e4a60d3b0e1/images.png" alt="your image" />
+
+                            <input type='file' id="imgInp" style="opacity: 0;cursor: pointer;;display:flex;position: absolute;right: 370px;bottom: 500px;"/>
+                        </div>
+                        <div style="padding-bottom: 50px;">
+                            <h2 id="resume-username">Your Name</h2>
+                        </div>
+                        <div style="padding-left: 20px;color: white">
+                            <div style="padding-bottom: 30px;">
+                                <p class="resume-left-title"><b>Details</b></p>
+                                <p class="resume-p-content" id="resume-user-location">City, Country</p> 
+                                <p class="resume-p-content" id="resume-user-email">email@gmail.com</p>
+                                <p class="resume-p-content" id="resume-user-link">www.myportfolio.com</p>
+                                <p style="float: left;" class="resume-p-content">Phone:&nbsp</p>
+                                <p class="resume-p-content" id="resume-user-phone">95XXXXXXXX</p>
+                            </div>
+
+
+                            <div style="padding-bottom: 30px;">
+                                <p class="resume-left-title" id="resume-skill-heading"><b>Skills</b></p>
+                                <p class="resume-p-content">C++</p>
+                                <p class="resume-p-content">JavaScript</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="resume-right-area" style="padding-left: 10px;padding-right: 10px;">
+                        <div style="padding-top: 15px;">
+                            <div style="padding-bottom: 20px;">
+                                <h4><i class="fas fa-s fa-user"></i>&nbspProfile</h4>
+                                <p style="color: black;font-size: 12px;">Lorem ipsum dolor sit, amet consectetur
+                                    adipisicing elit. Nulla magni ea explicabo libero? Assumenda molestias iure
+                                    laudantium cupiditate, possimus tempore neque, iusto id unde nesciunt officiis qui
+                                    rerum eaque nulla?</p>
+                            </div>
+
+                            <div style="padding-bottom: 20px;">
+                                <h4><i class="fas fa-briefcase"></i>&nbspExperience</h4>
+                                <div style="margin: 0%;padding: 0%;overflow: hidden;">
+                                    <p class="resume-p-content" style="color: black;float: left;"><b id="job-name">Job Name</b></p>
+                                    <p class="resume-p-content" style="color: black;float: right;">
+                                        <em id="resume-start-date">Start Date</em>&nbsp-&nbsp<em id="resume-end-date">End Date</em>
+                                    </p>
+                                    <br>
+                                    <p id="resume-company-name" style="color: rgb(0, 0, 0);font-size: 14px;">Company Name</p>
+                                </div>
+
+                                <p id="resume-job-des" style="color: black;font-size: 12px;">Lorem ipsum dolor sit, amet consectetur
+                                    adipisicing elit. Nulla magni ea explicabo libero? </p><br>
+
+                                <!-- <div style="margin: 0%;padding: 0%;overflow: hidden;">
+                                    <p class="resume-p-content" style="color: black;float: left;"><b>Job Name</b></p>
+                                    <p class="resume-p-content" style="color: black;float: right;">
+                                        <em>Start Date&nbsp</em>-<em>&nbspEnd Date</em>
+                                    </p>
+                                    <br>
+                                    <p  style="color: rgb(0, 0, 0);font-size: 14px;">Company Name</p>
+                                </div>
+                                <p style="color: black;font-size: 12px;">Lorem ipsum dolor sit, amet consectetur
+                                    adipisicing elit. Nulla magni ea explicabo libero? </p>
+                            </div> -->
+
+
+
+                            <div style="padding-bottom: 20px;">
+                                <h4><i class="fas fa-box-open"></i>&nbspProjects</h4>
+                                <p class="resume-p-content" style="color: black;"><b>Project Name</b></p>
+                                <p style="color: black;font-size: 12px;">Lorem ipsum dolor sit, amet consectetur
+                                    adipisicing elit. Nulla magni ea explicabo libero? Assumenda molestias iure
+                                    laudantium cupiditate, possimus tempore neque,</p>
+
+                            </div>
+
+
+                            <div style="padding-bottom: 20px;">
+                                <h4><i class="fas fa-graduation-cap"></i>&nbspEducation</h4>
+
+                                <div style="margin: 0%;padding: 0%;overflow: hidden;">
+                                    <p class="resume-p-content" style="color: black;float: left;"><b>Degree Name</b></p>
+                                    <p class="resume-p-content" style="color: black;float: right;">
+                                        <em>Start Date&nbsp</em>-<em>&nbspEnd Date</em>
+                                    </p>
+                                    <br>
+                                    <p style="color: rgb(0, 0, 0);font-size: 14px;">School Name</p>
+                                </div>
+
+                                <p style="color: black;font-size: 12px;">Lorem ipsum dolor sit, amet consectetur
+                                    adipisicing elit. Nulla magni ea explicabo libero? </p>
+                            </div>
+
+
+                            <div style="padding-bottom:90px;">
+                                <h4><i class="fas fa-plus"></i>&nbspMost Proud of</h4>
+                                <p class="resume-p-content" style="color: black;"><b>Award Name</b></p>
+                                <i class="resume-p-content" style="color: black;">Awarder Name</i>
+                                <p style="color: black;font-size: 12px;">Lorem ipsum dolor sit, amet consectetur
+                                    adipisicing elit. Nulla magni ea explicabo libero? Assumenda molestias iure
+                                    laudantium cupiditate, possimus tempore neque,</p>
+
+                                <br>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    </div>
+
+
+    <footer>
+     Devloped by Hemanthkatakam &copy All rights Reserved
+    </footer>
+
+
+</body>
+<script src="index.js"></script>
+
+</html>
+
+
+
+
+<!-- <div style="background-color: rgb(255, 255, 255);border: 1px solid black;">
+    <table style="width: 700px;height: 1000px;align-items:center;">
+        <tr>
+            <td style="width: 250px;background-color: #1b6392;">
+                <img src="user.webp" alt="user" width="180px"
+                    style="padding-left: 60px;border-radius: 50%;padding-top: 20px;">
+                <h2 style="color: rgb(255, 255, 255);">Durgesh Ahire</h2> <br><br>
+                <div style="padding-left: 25px;">
+                    <h4 style="color: white;"> Details</h4>
+                    <p style="color: white;">Banglore, India</p>
+                    <p style="color: white;">Phone: 9511XXXXXX</p>
+                    <p style="color: white;">durgeshahire07@gmail.com</p>
+                    <p style="color: white;">www.myportfolio.com</p><br><br>
+                    <h4 style="color: white;">Skills</h4><br>
+                    <p style="color: white;"><b>Programming Languages:</b></p>
+                    <p style="color: white;">C++</p>
+                    <p style="color: white;">JavaScript</p>
+                    <p style="color: white;">Java</p>
+                    <p style="color: white;">Kotlin</p><br>
+                    <p style="color: white;"><b>Frameworks:</b></p>
+                    <p style="color: white;">React</p>
+                    <p style="color: white;">React Native</p>
+                    <br><br><br><br><br><br><br><br><br>
+                    <br><br><br><br><br><br>
+                </div>
+            </td>
+            <td style="width: 500px; background-color: rgb(255, 255, 255);">
+                <div style="padding-left: 10px;">
+                    <p><b>Profile</b></p>
+                    <p>Lorem ipsum dolor sit,
+                        amet consectetur adipisicing elit. Cumque facilis, a
+                        mollitia vero voluptatum distinctio molestiae minus
+                        quasi id inventore fuga provident accusamus nam asperiores
+                        quis repellat repudiandae ipsa unde!</p><br><br>
+                    <p><b>Experience</b></p>
+                    <p style="color: black;"><b>Software Developer</b></p>
+                    <p style="color: grey;"><b>Infosys</b></p>
+                    <p><i style="color: grey;">Aug 2018 - Sept 2019 </i></p>
+                    <p>Lorem ipsum dolor sit,
+                        amet consectetur adipisicing elit. Cumque facilis, a
+                        mollitia vero voluptatum distinctio molestiae minus
+                        quasi id inventore fuga provident accusamus nam asperiores
+                        quis repellat repudiandae ipsa unde!</p><br>
+                    <p style="color: black;"><b>Software Developer</b></p>
+                    <p style="color: grey;"><b>Infosys</b></p>
+                    <p><i style="color: grey;">Aug 2018 - Sept 2019 </i></p>
+                    <p>Lorem ipsum dolor sit,
+                        amet consectetur adipisicing elit. Cumque facilis, a
+                        mollitia vero voluptatum distinctio molestiae minus
+                        quasi id inventore fuga provident accusamus nam asperiores
+                        quis repellat repudiandae ipsa unde!</p><br><br>
+                        <p><b>Education</b></p>
+                        <p style="color: black;"><b>Degree</b></p>
+                        <p style="color: black;">School Name</p>
+                        <p><i style="color: grey;">Aug 2018 - Sept 2019 </i></p>
+                        <p>Lorem ipsum dolor sit,
+                            amet consectetur adipisicing elit. Cumque facilis, a
+                            mollitia vero voluptatum distinctio molestiae minus
+                            quasi id inventore fuga provident accusamus nam asperiores
+                            quis repellat repudiandae ipsa unde!</p><br>
+                    
+                            <p style="color: black;"><b>Degree 2</b></p>
+                            <p style="color: black;">School Name 2</p>
+                            <p><i style="color: grey;">Aug 2018 - Sept 2019 </i></p>
+                            <p>Lorem ipsum dolor sit,
+                                amet consectetur adipisicing elit. Cumque facilis, a
+                                mollitia vero voluptatum distinctio molestiae minus
+                                quasi id inventore fuga provident accusamus nam asperiores
+                                quis repellat repudiandae ipsa unde!</p><br>
+                       
+                </div>
+            </td>
+        </tr>
+    </table>
+</div> -->
